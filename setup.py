@@ -16,8 +16,8 @@ setup(
     name='chemopt',
     version='0.1.0',
     python_requires='==3.*,>=3.7.0',
-    author='jangerit',
-    author_email='jan.rittig@rwth-aachen.de',
+    author='lightinggost',
+    author_email='',
     packages=['chemopt'],
     package_dir={"": "."},
     package_data={

@@ -6,7 +6,7 @@ import json
 
 from .rnn import *
 from .reactions import QuadraticEval, ConstraintQuadraticEval, RealReaction
-from logger import get_handlers
+from .logger import get_handlers
 from collections import namedtuple
 
 logging.basicConfig(level=logging.INFO, handlers=get_handlers())

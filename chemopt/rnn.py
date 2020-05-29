@@ -1,7 +1,7 @@
 import tensorflow as tf
 from .batch_norm import *
 from .util import *
-from .pdb import *
+import pdb
 
 from tensorflow.contrib.rnn import RNNCell
 from tensorflow.python.ops import array_ops

@@ -96,7 +96,7 @@ def main():
                        object_hook=lambda d:namedtuple('x', d.keys())(*d.values()))
 
     param_names = ['voltage', 'flow_rate', 'pressure']
-    param_range = [(0.0, 5.0), (1.0, 12.0), (10, 100)]
+    param_range = [(0.0, 1.0), (0.0, 1.0), (0.0, 1.0)]
     func = RealReaction(num_dim = 3, param_range=param_range, param_names=param_names,
                         direction='max', logger=None)
 

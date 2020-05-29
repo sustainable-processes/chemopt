@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: chemopt
+Version: 0.1.0
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author:  lightingghost 
+Author-email: 
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: ==3.*,>=3.7.0
+Provides-Extra: dev

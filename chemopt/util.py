@@ -1,10 +1,10 @@
 import os
 import math
-import reactions
 import tensorflow as tf
 
-import rnn
-from model import Optimizer
+from .reactions import *
+from .rnn import *
+from .model import Optimizer
 from shutil import copyfile
 
 

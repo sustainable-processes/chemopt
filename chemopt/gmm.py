@@ -6,7 +6,7 @@ from itertools import product
 from mpl_toolkits.mplot3d import Axes3D
 
 import tensorflow as tf
-from reactions import GMM as tf_GMM
+from .reactions import GMM as tf_GMM
 
 class GMM:
     def __init__(self, n=6, ndim=3, cov=0.15, record=False):

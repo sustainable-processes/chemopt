@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-import base
+from .base import *
 
 from tensorflow.contrib.layers.python.layers import utils
 

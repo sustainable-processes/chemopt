@@ -1,5 +1,5 @@
 import tensorflow as tf
-import ops
+from .ops import *
 import pdb
 
 from tensorflow.python.util import nest

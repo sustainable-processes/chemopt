@@ -6,8 +6,8 @@ import numpy as np
 import logging
 import json
 
-from model import Optimizer
-from rnn import MultiInputLSTM
+from .model import Optimizer
+from .rnn import MultiInputLSTM
 from logger import get_handlers
 from collections import namedtuple
 

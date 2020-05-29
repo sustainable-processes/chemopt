@@ -2,7 +2,7 @@ import GPy
 import numpy as np
 import matplotlib.pyplot as plt
 from itertools import product
-from reactions import QuadraticEval
+from .reactions import QuadraticEval
 
 def gp(prior_X, prior_Y, variance=0.1, lengthscale=0.1, X=None, nsamples=1):
     nd = prior_X.shape[1]

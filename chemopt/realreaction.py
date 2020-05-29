@@ -4,7 +4,7 @@ import logging
 import matplotlib.pyplot as plt
 import json
 
-import .rnn
+from rnn import *
 from reactions import QuadraticEval, ConstraintQuadraticEval, RealReaction
 from logger import get_handlers
 from collections import namedtuple

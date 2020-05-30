@@ -91,7 +91,7 @@ class StepOptimizer:
         return x_array, y_array
 
 def main():
-    config_file = open('./config.json')
+    config_file = open('config.json')
     config = json.load(config_file,
                        object_hook=lambda d:namedtuple('x', d.keys())(*d.values()))
 

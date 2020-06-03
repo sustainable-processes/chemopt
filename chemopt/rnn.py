@@ -1,6 +1,11 @@
 import tensorflow as tf
-from .batch_norm import *
-from .util import *
+import os.path as osp
+import sys
+path = osp.join(osp.dirname(osp.realpath("__file__")),'chemopt')
+sys.path.append(path)
+
+import batch_norm
+import util
 import pdb
 
 from tensorflow.contrib.rnn import RNNCell

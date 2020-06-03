@@ -7,8 +7,13 @@ import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 
-from .model import Optimizer
-from .rnn import MultiInputLSTM
+import os.path as osp
+import sys
+path = osp.join(osp.dirname(osp.realpath("__file__")),'chemopt')
+sys.path.append(path)
+
+from model import Optimizer
+from rnn import MultiInputLSTM
 from logger import get_handlers
 from collections import namedtuple
 

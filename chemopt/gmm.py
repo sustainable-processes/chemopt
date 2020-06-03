@@ -6,7 +6,13 @@ from itertools import product
 from mpl_toolkits.mplot3d import Axes3D
 
 import tensorflow as tf
-from .reactions import GMM as tf_GMM
+
+import os.path as osp
+import sys
+path = osp.join(osp.dirname(osp.realpath("__file__")),'chemopt')
+sys.path.append(path)
+
+from reactions import GMM as tf_GMM
 
 class GMM:
     def __init__(self, n=6, ndim=3, cov=0.15, record=False):

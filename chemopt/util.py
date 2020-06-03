@@ -2,9 +2,14 @@ import os
 import math
 import tensorflow as tf
 
-from .reactions import *
-from .rnn import *
-from .model import Optimizer
+import os.path as osp
+import sys
+path = osp.join(osp.dirname(osp.realpath("__file__")),'chemopt')
+sys.path.append(path)
+
+import reactions
+import rnn
+from model import Optimizer
 from shutil import copyfile
 
 

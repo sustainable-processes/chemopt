@@ -7,6 +7,11 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import json
 
+import os.path as osp
+import sys
+path = osp.join(osp.dirname(osp.realpath("__file__")),'chemopt')
+sys.path.append(path)
+
 import rnn
 from reactions import QuadraticEval, ConstraintQuadraticEval, RealReaction
 from logger import get_handlers

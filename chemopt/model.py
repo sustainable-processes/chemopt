@@ -1,8 +1,14 @@
 import tensorflow as tf
-from .ops import *
 import pdb
 
 from tensorflow.python.util import nest
+
+import os.path as osp
+import sys
+path = osp.join(osp.dirname(osp.realpath("__file__")),'chemopt')
+sys.path.append(path)
+
+import ops
 
 class Optimizer:
     def __init__(self, cell, logger, func, ndim, batch_size, unroll_len,

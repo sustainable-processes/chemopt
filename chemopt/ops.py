@@ -3,6 +3,11 @@ import collections
 import tensorflow as tf
 import mock
 
+import os.path as osp
+import sys
+path = osp.join(osp.dirname(osp.realpath("__file__")),'chemopt')
+sys.path.append(path)
+
 def wrap_variable_creation(func, custom_getter):
     """Provides a custom getter for all variable creations."""
     original_get_variable = tf.get_variable

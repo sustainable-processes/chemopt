@@ -3,6 +3,11 @@ os.environ['TF_CPP_MIN_LOG_LEVEL']='3'
 import tensorflow as tf
 import numpy as np
 
+import os.path as osp
+import sys
+path = osp.join(osp.dirname(osp.realpath("__file__")),'chemopt')
+sys.path.append(path)
+
 class ConstraintQuadratic:
     """Quadratic problem: f(x) = ||Wx - y||."""
     def __init__(self, batch_size=128, num_dims=3, ptype='convex',

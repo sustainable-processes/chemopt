@@ -4,6 +4,11 @@ import time
 import os
 import sys
 
+import os.path as osp
+import sys
+path = osp.join(osp.dirname(osp.realpath("__file__")),'chemopt')
+sys.path.append(path)
+
 def get_handlers(log_file=True, log_stdout=True):
     handlers = []
     ts = time.time()

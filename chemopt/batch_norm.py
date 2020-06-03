@@ -1,8 +1,13 @@
 import tensorflow as tf
-
-from .base import *
-
 from tensorflow.contrib.layers.python.layers import utils
+
+import os.path as osp
+import sys
+path = osp.join(osp.dirname(osp.realpath("__file__")),'chemopt')
+sys.path.append(path)
+
+import base
+
 
 class BatchNorm():
     GAMMA = "gamma"

@@ -4,9 +4,14 @@ import logging
 import matplotlib.pyplot as plt
 import json
 
-from .rnn import *
-from .reactions import QuadraticEval, ConstraintQuadraticEval, RealReaction
-from .logger import get_handlers
+import os.path as osp
+import sys
+path = osp.join(osp.dirname(osp.realpath("__file__")),'chemopt')
+sys.path.append(path)
+
+import rnn
+from reactions import QuadraticEval, ConstraintQuadraticEval, RealReaction
+from logger import get_handlers
 from collections import namedtuple
 
 logging.basicConfig(level=logging.INFO, handlers=get_handlers())
@@ -91,7 +96,8 @@ class StepOptimizer:
         return x_array, y_array
 
 def main():
-    config_file = open('config.json')
+    path = osp.join(osp.dirname(osp.realpath(__file__)), 'config.json')
+    config_file = open(path)
     config = json.load(config_file,
                        object_hook=lambda d:namedtuple('x', d.keys())(*d.values()))
 

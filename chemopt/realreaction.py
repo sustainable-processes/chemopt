@@ -8,6 +8,7 @@ import os.path as osp
 import sys
 path = osp.join(osp.dirname(osp.realpath("__file__")),'chemopt')
 sys.path.append(path)
+print(sys.path)
 
 import rnn
 from reactions import QuadraticEval, ConstraintQuadraticEval, RealReaction
@@ -64,6 +65,7 @@ class StepOptimizer:
 
     def load(self, sess, ckpt_path):
         ckpt = tf.train.get_checkpoint_state(ckpt_path)
+        print(ckpt)
         if ckpt and ckpt.model_checkpoint_path:
             logger.info('Reading model parameters from {}.'.format(
                 ckpt.model_checkpoint_path))
@@ -98,8 +100,16 @@ class StepOptimizer:
 def main():
     path = osp.join(osp.dirname(osp.realpath(__file__)), 'config.json')
     config_file = open(path)
+    print(11111111111111111111111111)
+    print(path)
+    print(config_file)
     config = json.load(config_file,
                        object_hook=lambda d:namedtuple('x', d.keys())(*d.values()))
+    print(osp.dirname(osp.realpath(__file__)))
+    save_dir = str(config.save_path)
+    save_path = osp.join(osp.dirname(osp.realpath(__file__)), save_dir)
+    print(config.save_path)
+    print(save_path)
 
     param_names = ['voltage', 'flow_rate', 'pressure']
     param_range = [(0.0, 1.0), (0.0, 1.0), (0.0, 1.0)]
@@ -112,7 +122,7 @@ def main():
                                  reuse=config.reuse)
     optimizer = StepOptimizer(cell=cell, func=func, ndim=config.num_params,
                               nsteps=config.num_steps,
-                              ckpt_path=config.save_path, logger=logger,
+                              ckpt_path=save_path, logger=logger,
                               constraints=config.constraints)
     x_array, y_array = optimizer.run()
 

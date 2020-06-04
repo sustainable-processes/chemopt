@@ -6,9 +6,7 @@ import json
 
 import os.path as osp
 import sys
-path = osp.join(osp.dirname(osp.realpath("__file__")),'chemopt')
-sys.path.append(path)
-print(sys.path)
+sys.path.append(osp.dirname(osp.realpath(__file__)))
 
 import rnn
 from reactions import QuadraticEval, ConstraintQuadraticEval, RealReaction
@@ -100,16 +98,10 @@ class StepOptimizer:
 def main():
     path = osp.join(osp.dirname(osp.realpath(__file__)), 'config.json')
     config_file = open(path)
-    print(11111111111111111111111111)
-    print(path)
-    print(config_file)
     config = json.load(config_file,
                        object_hook=lambda d:namedtuple('x', d.keys())(*d.values()))
-    print(osp.dirname(osp.realpath(__file__)))
     save_dir = str(config.save_path)
     save_path = osp.join(osp.dirname(osp.realpath(__file__)), save_dir)
-    print(config.save_path)
-    print(save_path)
 
     param_names = ['voltage', 'flow_rate', 'pressure']
     param_range = [(0.0, 1.0), (0.0, 1.0), (0.0, 1.0)]

@@ -5,8 +5,6 @@ import matplotlib.pyplot as plt
 import json
 
 import os.path as osp
-import sys
-sys.path.append(osp.dirname(osp.realpath(__file__)))
 
 import rnn
 from reactions import QuadraticEval, ConstraintQuadraticEval, RealReaction

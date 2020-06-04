@@ -24,8 +24,12 @@ def create_model(sess, config, logger):
     if not config.save_path == None:
         if not os.path.exists(config.save_path):
             os.mkdir(config.save_path)
-    path = osp.join(osp.dirname(osp.realpath(__file__)), 'config.json')
-    copyfile(path, os.path.join(config.save_path, 'config.json'))  
+    path = osp.dirname(osp.realpath(__file__))
+    src_path = osp.join(path, 'config.json')
+    print(src_path)
+    save_path = osp.join(path, config.save_path)
+    print(save_path)
+    copyfile(src_path, os.path.join(save_path, 'config.json'))  
 
     if config.opt_direction == 'max':
         problem_type = 'concave'
@@ -76,7 +80,7 @@ def create_model(sess, config, logger):
         direction=config.opt_direction, constraints=config.constraints,
         discount_factor=config.discount_factor)
 
-    ckpt = tf.train.get_checkpoint_state(config.save_path)
+    ckpt = tf.train.get_checkpoint_state(osp.join(osp.dirname(osp.realpath(__file__)), config.save_path))
     if ckpt and ckpt.model_checkpoint_path:
         logger.info('Reading model parameters from {}.'.format(
             ckpt.model_checkpoint_path))
@@ -87,7 +91,7 @@ def create_model(sess, config, logger):
     return model
 
 def load_model(sess, config, logger):
-    assert(os.path.exists(config.save_path))
+    assert(os.path.exists(osp.join(osp.dirname(osp.realpath(__file__)), config.save_path)))
 
     if config.opt_direction == 'max':
         problem_type = 'concave'
@@ -140,7 +144,7 @@ def load_model(sess, config, logger):
         discount_factor=config.discount_factor)
 
 
-    ckpt = tf.train.get_checkpoint_state(config.save_path)
+    ckpt = tf.train.get_checkpoint_state(osp.join(osp.dirname(osp.realpath(__file__)), config.save_path))
     if ckpt and ckpt.model_checkpoint_path:
         logger.info('Reading model parameters from {}.'.format(
             ckpt.model_checkpoint_path))

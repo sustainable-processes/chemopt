@@ -61,7 +61,6 @@ class StepOptimizer:
 
     def load(self, sess, ckpt_path):
         ckpt = tf.train.get_checkpoint_state(ckpt_path)
-        print(ckpt)
         if ckpt and ckpt.model_checkpoint_path:
             logger.info('Reading model parameters from {}.'.format(
                 ckpt.model_checkpoint_path))

@@ -50,10 +50,11 @@ def main():
 
                 mbc = max(best_cost)
                 if config.save_path is not None and total_cost < mbc:
+                    save_path = osp.join(osp.dirname(osp.realpath(__file__)), config.save_path)
                     best_cost.remove(mbc)
                     best_cost.append(total_cost)
                     logger.info('Save current model ...')
-                    model.saver.save(sess, config.save_path, global_step=e)
+                    model.saver.save(sess, save_path, global_step=e)
 
                 total_cost = 0
 

@@ -1,6 +1,6 @@
 {
     "log_path": "./log/",
-    "save_path": "./save/",
+    "save_path": "save/",
     "batch_size": 128,
     "hidden_size": 128,
     "num_layers": 2,

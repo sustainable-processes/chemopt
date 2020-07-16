@@ -13,11 +13,14 @@ from rnn import MultiInputLSTM
 from logger import get_handlers
 from collections import namedtuple
 
+import argparse
+
 logging.basicConfig(level=logging.INFO, handlers=get_handlers())
 logger = logging.getLogger()
 
-def main():
-    path = osp.join(osp.dirname(osp.realpath(__file__)), 'config.json')
+def main(**kwargs):
+    config_name = kwargs.get("config_name", "config.json")
+    path = osp.join(osp.dirname(osp.realpath(__file__)), config_name)
     config_file = open(path)
     config = json.load(config_file,
                        object_hook=lambda d:namedtuple('x', d.keys())(*d.values()))
@@ -60,4 +63,9 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--config_name', default='config.json')
+
+    args = parser.parse_args()
+    config_name = str(args.config_name)
+    main(config_name=config_name)

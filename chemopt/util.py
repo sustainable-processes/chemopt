@@ -25,11 +25,11 @@ def create_model(sess, config, logger):
         if not os.path.exists(config.save_path):
             os.mkdir(config.save_path)
     path = osp.dirname(osp.realpath(__file__))
-    src_path = osp.join(path, 'config.json')
-    print(src_path)
+    #src_path = osp.join(path, 'config.json')
+    #print(src_path)
     save_path = osp.join(path, config.save_path)
-    print(save_path)
-    copyfile(src_path, os.path.join(save_path, 'config.json'))  
+    #print(save_path)
+    #copyfile(src_path, os.path.join(save_path, 'config.json'))  
 
     if config.opt_direction == 'max':
         problem_type = 'concave'

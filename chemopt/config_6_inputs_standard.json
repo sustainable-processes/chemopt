@@ -1,0 +1,28 @@
+{
+    "log_path": "./log/",
+    "save_path": "save/6_inputs_standard/",
+    "batch_size": 128,
+    "hidden_size": 80,
+    "num_layers": 2,
+    "batch_norm": false,
+    "reuse": false,
+    "num_epochs": 50000,
+    "log_period": 100,
+    "evaluation_period": 100,
+    "evaluation_epochs": 20,
+    "reaction_type": "gmm",
+    "norm_cov": 0.3,
+    "constraints": false,
+    "num_params": 6,
+    "instrument_error": 0.01,
+    "num_steps": 50,
+    "unroll_length": 50,
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "loss_type": "naive",
+    "discount_factor": 0.97,
+    "opt_direction": "min",
+    "policy": "srnn",
+    "trainable_init": true
+    
+}

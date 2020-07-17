@@ -1,0 +1,4 @@
+model_checkpoint_path: "/chemopt/chemopt/save/5_inputs_bigger/-8999"
+all_model_checkpoint_paths: "/chemopt/chemopt/save/5_inputs_bigger/-8399"
+all_model_checkpoint_paths: "/chemopt/chemopt/save/5_inputs_bigger/-8699"
+all_model_checkpoint_paths: "/chemopt/chemopt/save/5_inputs_bigger/-8999"

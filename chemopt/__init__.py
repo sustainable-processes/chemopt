@@ -4,5 +4,4 @@ import os.path as osp
 import sys
 sys.path.append(osp.dirname(osp.realpath(__file__)))
 
-import realreaction
-import pretraining
+import rnn

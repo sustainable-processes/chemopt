@@ -1,6 +1,6 @@
 {
     "log_path": "./log/",
-    "save_path": "save/3_inputs_standards/",
+    "save_path": "save/3_inputs_standard/",
     "batch_size": 128,
     "hidden_size": 80,
     "num_layers": 2,
